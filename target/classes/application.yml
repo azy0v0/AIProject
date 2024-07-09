@@ -1,0 +1,8 @@
+spring:
+  application:
+   name: spring-ai-chatgpt
+
+  ai:
+    openai:
+      api-key: sk-MwST511mDlJ76CFa1e10B307D92748A1AaC31b815b5136B4
+      base-url: https://api.xty.app

@@ -1,0 +1,92 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_ai
+    username: root
+    password: 123456
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  application:
+    name: spring-ai-chatgpt
+  ai:
+    spark:
+      chat:
+        api-key: xxx
+        api-secret: xxx
+        appid: xxx
+        enabled: true
+        options:
+          domain: generalv3.5
+          base-url: https://spark-api.xf-yun.com/v3.5/chat
+    dash-scope:
+      api-key: xxx
+      enabled: true
+      chat:
+        model: qwen-max
+      embedding:
+        model: text-embedding-v2
+    qian-fan:
+      access-key: xxx
+      secret-key: xxx
+      enabled: true
+      chat:
+        model: ERNIE-4.0-8K
+    openai:
+      api-key: xxx
+      base-url: xxx
+      chat:
+        enabled: true
+        options:
+          model: gpt-3.5-turbo
+    zhipuai:
+      api-key: xxx
+      chat:
+        enabled: true
+        options:
+          model: GLM-4
+    kimi:
+      api-key: xxx
+      enabled: true
+      chat:
+        model: moonshot-v1-32k
+    vectorstore:
+      redis:
+        uri: redis://default:123456@localhost:6379
+
+server:
+  port: 8888
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+sa-token:
+  token-name: token
+  timeout: 2592000
+  active-timeout: -1
+  is-concurrent: true
+  is-share: true
+  token-style: uuid
+  is-log: true
+  auto-renew: true
+
+
+oss:
+  provider: ali_yun
+  ali-yun:
+    access-key-id: xxx
+    access-key-secret: xxx
+    endpoint: xxx
+    bucket-name: xxx
+jimmer:
+  dialect: org.babyfish.jimmer.sql.dialect.MySqlDialect
+  show-sql: true
+  pretty-sql: true
+  client:
+    ts:
+      path: /ts.zip
+    openapi:
+      path: /openapi
+      ui-path: /openapi-ui
